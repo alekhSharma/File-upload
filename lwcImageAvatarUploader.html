@@ -1,0 +1,58 @@
+<template>
+    <div class="slds">
+        <div tabindex="-1" aria-labelledby="header" aria-hidden="false" data-id="modal" role="dialog" class="slds-modal slds-fade-in-open " style="display:none;">
+            <div class="slds-backdrop slds-backdrop--open">
+                <div class="slds-modal__container">
+                    
+                    <div class="slds-modal__header">
+                        <lightning-button-icon class="slds-modal__close" icon-name="utility:close" variant="bare-inverse" size="large" alternative-text="Close" onclick={closeModal}></lightning-button-icon>
+                         <h2 id="header" class="slds-text-heading--medium">Avatar</h2>
+                    </div>
+                   
+                    <div class="slds-modal__content">
+                        
+                        <div  class="slds-align--absolute-center slds-p-top--small">
+                            <span class="slds">
+                                   
+                                <img style="height:175px;width:175px" src={pictureSource} alt="Avatar" />
+                            </span>
+                        </div>
+                        <div class="slds-form-element slds-align--absolute-center slds-p-top--small">
+                            <div class="slds-form-element__control">
+                                    <lightning-input type="file"
+                                    label="Attachment"
+                                    name="file"
+                                    accept="image/png, .zip"
+                                    onchange={handleChange}
+                                    multiple>
+                                    </lightning-input>
+                            </div>
+                        </div> 
+                        
+                        <div class="slds-p-around--small"></div>
+                        
+                    </div>
+                    
+                    <div class="slds-modal__footer">
+                        <lightning-button class="slds-button slds-button__brand" onclick={closeModal} label='Close' ></lightning-button>
+                        <lightning-button class="slds-button slds-button__brand" onclick={save} label='Save' ></lightning-button>
+                     </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div  class="slds-align--absolute-center">
+            <div class="slds-file-selector__dropzone">
+                <span class="slds">
+                    <img  style="height:280px;width:300px"  src={pictureSource}  alt="Avatar" />
+                </span>
+            </div>
+        </div>
+        
+        <div class="slds-p-top--small">
+            <button class="slds-button slds-button--neutral slds-align--absolute-center " onclick={showModal}>Upload</button>
+        </div>
+        
+    </div>
+</template>
